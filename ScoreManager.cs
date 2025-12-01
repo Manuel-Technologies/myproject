@@ -1,5 +1,4 @@
-
-            using System;
+using System;
 
 using System.Linq;
 
@@ -39,6 +38,7 @@ public static class Program
         Console.WriteLine("");
         Console.WriteLine("-------------------");
         Console.WriteLine("");
+        Console.WriteLine("below are your subjects and scores");
         Console.WriteLine($"");
 
         for (int i = 0; i < subjects.Count; i++)
@@ -46,6 +46,16 @@ public static class Program
             Console.WriteLine(subjects[i] + ":" + scores[i]);
         }
 
+
+        Console.WriteLine("");
+        var highestScore = scores.Max();
+        var lowestScore = scores.Min();
+        var average = scores.Average();
+
+        Console.WriteLine("");
+        Console.WriteLine($"your highest score is {highestScore}");
+        Console.WriteLine($"your lowest score is {lowestScore}");
+        Console.WriteLine($"your average is {average}");
 
 
 
