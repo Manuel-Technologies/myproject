@@ -4,6 +4,7 @@ using System.Linq;
 
 using System.Collections.Generic;
 using System.Threading;
+using System.Data;
 
 
 
@@ -17,23 +18,25 @@ public class BankDemo
     static double balance = 0;
     public static void Main()
     {
-        double balance = 0;
+        // double balance = 0;
         bool isRunning = true;
+        Console.WriteLine("Welcome to SwiftPay..");
+        Thread.Sleep(500);
+
+        Console.WriteLine("the first real console bank");
+        Thread.Sleep(500);
 
         while (isRunning == true)
         {
-            Console.WriteLine("Welcome to SwiftPay..");
-            Thread.Sleep(4000);
 
-            Console.WriteLine("the first real console bank");
-            Thread.Sleep(2000);
 
             Console.WriteLine($"choose an option to continue with");
-            Thread.Sleep(2000);
+            Thread.Sleep(500);
             Console.WriteLine($" 1. check balance");
             Console.WriteLine($" 2. Deposit");
             Console.WriteLine($" 3. withdraw ");
             Console.WriteLine($" 4. exit");
+
 
             //take and handle the user option check the user input
 
@@ -44,22 +47,27 @@ public class BankDemo
                 CheckBalance();
             }
 
-            if (userOption == 2)
+            else if (userOption == 2)
             {
-                DepositMoney();
+                balance += DepositMoney();
+
+
             }
 
-            if (userOption == 3)
+            else if (userOption == 3)
             {
-                Withdraw();
+                balance -= Withdraw();
+
             }
 
-            if (userOption == 4)
+            else if (userOption == 4)
             {
-                break;
+                isRunning = false;
+                Thread.Sleep(500);
+                Console.WriteLine("thank you for banking with us");
             }
 
-            else
+            else if (userOption < 1 || userOption > 4)
             {
                 Console.WriteLine("choose a valid option");
             }
@@ -80,8 +88,18 @@ public class BankDemo
         Console.WriteLine("input the amount you want to deposit...");
         depositAmount = double.Parse(Console.ReadLine());
 
-        depositAmount = balance = +depositAmount;
+        // depositAmount = balance += depositAmount;
+        if (depositAmount <= 0)
+        {
+            Console.WriteLine("the deposit amount must be greater than 0");
+            return 0;
 
+        }
+
+        else
+        {
+            Console.WriteLine($"the deposit of ₦{depositAmount} is successful");
+        }
         return depositAmount;
     }
 
@@ -96,11 +114,16 @@ public class BankDemo
 
         }
 
-        if (withdrawAmount < 0)
+        else if (withdrawAmount < 0)
         {
-            Console.WriteLine("withdraw amount must be less than 0");
+            Console.WriteLine("withdraw amount must be greater than 0");
+            return 0;
         }
 
+        else
+        {
+            Console.WriteLine($"withdrawal of ₦{withdrawAmount} is successful...");
+        }
 
 
         return withdrawAmount;
