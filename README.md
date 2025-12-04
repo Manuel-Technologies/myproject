@@ -39,3 +39,16 @@ Most projects include a simple script:
 ```bash
 ./run.sh        # builds and runs with dotnet
 ./debug.sh      # attaches remote debugger if needed
+MAUI projects can be built directly with:
+dotnet build -t:Run -f net9.0-android
+Philosophy
+Production-ready code quality, even in experiments
+Clean Architecture by default
+Vertical Slice > Layered when it makes sense
+Heavy emphasis on testing and CI
+Mobile-first development workflow
+License
+MIT — use, modify, and learn freely.
+Feel free to open issues if something inspires a question, or send a PR if you improve any project.
+Happy coding — from a phone, anywhere in the world
+Made with discipline, weak wifi and a curious mind 
