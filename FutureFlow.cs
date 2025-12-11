@@ -42,6 +42,11 @@ public class TodoListApp
                 AddTask();
             }
 
+            else if (userInput == 2)
+            {
+                ViewTasks();
+            }
+
 
 
 
@@ -60,12 +65,30 @@ public class TodoListApp
 
     }
 
-    static string AddTask()
+    static void AddTask()
     {
-        string come = "go";
+        Console.WriteLine($"input the task you want to add");
+        string taskToAdd = Console.ReadLine();
 
-        return come;
+        Tasks.Add(taskToAdd);
 
+        Thread.Sleep(500);
+        Console.WriteLine($"task added to FutureFlow.....");
+        Thread.Sleep(500);
+
+
+
+    }
+
+
+    static void ViewTasks()
+    {
+        Console.WriteLine($"below are your tasks . make sure you stick with them .  procrastination is a killer");
+
+        for (int i = 0; i < Tasks.Count; i++)
+        {
+            Console.WriteLine($"your {i + 1} task is {Tasks[i]}");
+        }
     }
 
 }
