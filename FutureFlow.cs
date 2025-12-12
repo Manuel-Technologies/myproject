@@ -32,6 +32,7 @@ public class TodoListApp
             Console.WriteLine("2. View tasks");
             Console.WriteLine("3. remove completed or inactive tasks");
             Console.WriteLine("4. exit");
+            Console.WriteLine("");
 
             int userInput = int.Parse(Console.ReadLine());
 
@@ -45,6 +46,11 @@ public class TodoListApp
             else if (userInput == 2)
             {
                 ViewTasks();
+            }
+
+            else if (userInput == 3)
+            {
+
             }
 
 
@@ -68,13 +74,16 @@ public class TodoListApp
     static void AddTask()
     {
         Console.WriteLine($"input the task you want to add");
+        Console.WriteLine("");
         string taskToAdd = Console.ReadLine();
+        Console.WriteLine("");
 
         Tasks.Add(taskToAdd);
 
         Thread.Sleep(500);
         Console.WriteLine($"task added to FutureFlow.....");
         Thread.Sleep(500);
+        Console.WriteLine("");
 
 
 
@@ -84,11 +93,25 @@ public class TodoListApp
     static void ViewTasks()
     {
         Console.WriteLine($"below are your tasks . make sure you stick with them .  procrastination is a killer");
+        Console.WriteLine("");
+        Console.WriteLine("----------------------------");
+        Console.WriteLine("");
 
         for (int i = 0; i < Tasks.Count; i++)
         {
-            Console.WriteLine($"your {i + 1} task is {Tasks[i]}");
+            Console.WriteLine($"Task {i + 1}  is {Tasks[i]}");
         }
+    }
+
+
+    static void DeleteTask()
+    {
+        Console.Write($"what is the number of the task you want to delete ?  :   ");
+        int taskToDelete;
+        taskToDelete = int.Parse(Console.ReadLine());
+
+        Tasks.Remove(Tasks[taskToDelete]);
+
     }
 
 }
