@@ -50,7 +50,18 @@ public class TodoListApp
 
             else if (userInput == 3)
             {
+                DeleteTask();
+            }
 
+            else if (userInput == 4)
+            {
+                isRunning = false;
+            }
+
+            else
+            {
+                Console.WriteLine($"choose a valid option");
+                Console.WriteLine("");
             }
 
 
@@ -85,6 +96,18 @@ public class TodoListApp
         Thread.Sleep(500);
         Console.WriteLine("");
 
+        //ask if the user still wants to add another task
+        Console.WriteLine($"do you still want to add another task ?  yes/no ?");
+        string secondChoice = Console.ReadLine();
+
+        if (secondChoice == "yes")
+        {
+            AddTask();
+        }
+
+
+
+
 
 
     }
@@ -100,17 +123,26 @@ public class TodoListApp
         for (int i = 0; i < Tasks.Count; i++)
         {
             Console.WriteLine($"Task {i + 1}  is {Tasks[i]}");
+            Console.WriteLine("");
         }
+
+        Console.WriteLine("-----------------------");
+        Console.WriteLine("");
     }
 
 
     static void DeleteTask()
     {
         Console.Write($"what is the number of the task you want to delete ?  :   ");
+        Console.WriteLine("");
+        Console.WriteLine("");
+        ViewTasks();
         int taskToDelete;
         taskToDelete = int.Parse(Console.ReadLine());
 
-        Tasks.Remove(Tasks[taskToDelete]);
+        Tasks.Remove(Tasks[taskToDelete - 1]);
+        Thread.Sleep(500);
+        Console.WriteLine("task deleted.... flow with your future on FutureFlow");
 
     }
 
