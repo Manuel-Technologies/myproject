@@ -16,6 +16,7 @@ namespace TaskFlow;
 public class TodoListApp
 {
     static List<string> Tasks = new List<string>();
+    static string filePath = "tasks.txt";
 
 
     public static void Main()
@@ -26,7 +27,8 @@ public class TodoListApp
         Console.WriteLine($"you can choose to doubt us if you want ,  you wont be judged ..");
         Console.WriteLine("------------------------------------------------");
         Console.WriteLine("");
-        LoadTasksFromFile();
+
+        LoadTasksFromFile(filePath);
 
         while (isRunning == true)
         {
@@ -116,7 +118,7 @@ public class TodoListApp
             AddTask();
         }
 
-        SaveTasksToFile();
+        SaveTasksToFile(filePath, Tasks);
 
 
 
@@ -156,7 +158,7 @@ public class TodoListApp
         Tasks.Remove(Tasks[taskToDelete - 1]);
         Thread.Sleep(500);
         Console.WriteLine("task deleted.... flow with your future on FutureFlow");
-        SaveTasksToFile(filePath);
+        SaveTasksToFile(filePath, Tasks);
 
     }
 
@@ -177,12 +179,12 @@ public class TodoListApp
 
         Tasks[taskToBeEdited - 1] = newTask;
 
-        SaveTasksToFile(filePath);
+        SaveTasksToFile(filePath, Tasks);
     }
 
 
     //FOR SAVING THE TASKS TO A FILE
-    static void SaveTasksToFile(string filePath, string Tasks)
+    static void SaveTasksToFile(string filePath, List<string> Tasks)
     {
         //string filePath = "tasks.txt";
         File.WriteAllLines(filePath, Tasks);
@@ -195,11 +197,20 @@ public class TodoListApp
     {
         if (File.Exists(filePath))
         {
-            File.ReadAllText(filePath);
+            File.ReadAllLines(filePath);
             //Console.WriteLine(fileContent);
+
+            Tasks.Clear();
+            string[] tasksFromFile = File.ReadAllLines(filePath);
+
+            foreach (string task in tasksFromFile)
+            {
+                Tasks.Add(task);
+            }
         }
     }
 
 }
+
 
 
