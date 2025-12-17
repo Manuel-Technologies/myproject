@@ -7,7 +7,7 @@ using System.Threading;
 
 
 
-namespace TodoList;
+namespace TaskFlow;
 
 
 
@@ -31,7 +31,8 @@ public class TodoListApp
             Console.WriteLine("1. Add task");
             Console.WriteLine("2. View tasks");
             Console.WriteLine("3. remove completed or inactive tasks");
-            Console.WriteLine("4. exit");
+            Console.WriteLine("4. Edit or update task");
+            Console.WriteLine("5. exit");
             Console.WriteLine("");
 
             int userInput = int.Parse(Console.ReadLine());
@@ -54,6 +55,11 @@ public class TodoListApp
             }
 
             else if (userInput == 4)
+            {
+                UpdateTask();
+            }
+
+            else if (userInput == 5)
             {
                 isRunning = false;
             }
@@ -82,6 +88,7 @@ public class TodoListApp
 
     }
 
+    //FOR ADDING OF TASK
     static void AddTask()
     {
         Console.WriteLine($"input the task you want to add");
@@ -112,7 +119,7 @@ public class TodoListApp
 
     }
 
-
+    //FOR VIEWING TASK
     static void ViewTasks()
     {
         Console.WriteLine($"below are your tasks . make sure you stick with them .  procrastination is a killer");
@@ -130,7 +137,7 @@ public class TodoListApp
         Console.WriteLine("");
     }
 
-
+    //FOR DELETING TASK
     static void DeleteTask()
     {
         Console.Write($"what is the number of the task you want to delete ?  :   ");
@@ -146,5 +153,24 @@ public class TodoListApp
 
     }
 
+    //FOR UPDATING TASK 
+
+    static void UpdateTask()
+    {
+        ViewTasks();
+        Console.WriteLine("");
+        Console.Write($"input the number of the task you want to edit  :  ");
+        int taskToBeEdited = int.Parse(Console.ReadLine());
+        Console.WriteLine("");
+
+        //   Tasks.Update(Tasks[taskToBeEdited - 1]);
+
+        Console.WriteLine($"write in your new task  :   ");
+        string newTask = Console.ReadLine();
+
+        Tasks[taskToBeEdited - 1] = newTask;
+    }
+
 }
+
 
