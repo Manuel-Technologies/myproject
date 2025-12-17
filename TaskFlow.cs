@@ -53,16 +53,19 @@ public class TodoListApp
             else if (userInput == 2)
             {
                 ViewTasks();
+
             }
 
             else if (userInput == 3)
             {
                 DeleteTask();
+                SaveTasksToFile(filePath, Tasks);
             }
 
             else if (userInput == 4)
             {
                 UpdateTask();
+                SaveTasksToFile(filePath, Tasks);
             }
 
             else if (userInput == 5)
@@ -104,9 +107,9 @@ public class TodoListApp
 
         Tasks.Add(taskToAdd);
 
-        Thread.Sleep(500);
+        //Thread.Sleep(500);
         Console.WriteLine($"task added to FutureFlow.....");
-        Thread.Sleep(500);
+        //Thread.Sleep(500);
         Console.WriteLine("");
 
         //ask if the user still wants to add another task
@@ -180,6 +183,7 @@ public class TodoListApp
         Tasks[taskToBeEdited - 1] = newTask;
 
         SaveTasksToFile(filePath, Tasks);
+
     }
 
 
