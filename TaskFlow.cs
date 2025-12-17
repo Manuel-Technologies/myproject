@@ -1,6 +1,8 @@
 using System;
 
 using System.Linq;
+using System.IO;
+using System.IO;
 
 using System.Collections.Generic;
 using System.Threading;
@@ -24,6 +26,7 @@ public class TodoListApp
         Console.WriteLine($"you can choose to doubt us if you want ,  you wont be judged ..");
         Console.WriteLine("------------------------------------------------");
         Console.WriteLine("");
+        LoadTasksFromFile();
 
         while (isRunning == true)
         {
@@ -34,6 +37,7 @@ public class TodoListApp
             Console.WriteLine("4. Edit or update task");
             Console.WriteLine("5. exit");
             Console.WriteLine("");
+
 
             int userInput = int.Parse(Console.ReadLine());
 
@@ -112,6 +116,8 @@ public class TodoListApp
             AddTask();
         }
 
+        SaveTasksToFile();
+
 
 
 
@@ -150,6 +156,7 @@ public class TodoListApp
         Tasks.Remove(Tasks[taskToDelete - 1]);
         Thread.Sleep(500);
         Console.WriteLine("task deleted.... flow with your future on FutureFlow");
+        SaveTasksToFile(filePath);
 
     }
 
@@ -169,6 +176,28 @@ public class TodoListApp
         string newTask = Console.ReadLine();
 
         Tasks[taskToBeEdited - 1] = newTask;
+
+        SaveTasksToFile(filePath);
+    }
+
+
+    //FOR SAVING THE TASKS TO A FILE
+    static void SaveTasksToFile(string filePath, string Tasks)
+    {
+        //string filePath = "tasks.txt";
+        File.WriteAllLines(filePath, Tasks);
+    }
+
+
+    //FOR LOADING THE TASKS FROM THE FILE
+
+    static void LoadTasksFromFile(string filePath)
+    {
+        if (File.Exists(filePath))
+        {
+            File.ReadAllText(filePath);
+            //Console.WriteLine(fileContent);
+        }
     }
 
 }
