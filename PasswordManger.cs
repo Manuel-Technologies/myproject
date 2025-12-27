@@ -1,5 +1,5 @@
-using System;
 
+using System;
 using System.Linq;
 
 using System.Collections.Generic;
@@ -21,10 +21,34 @@ public class PasswordManager
 
     public static void Main()
     {
+        string userChoice;
         Console.WriteLine("welcome to your password manager");
         Console.WriteLine();
 
-        AddPasswordDetails();
+        Console.WriteLine("what do you want to do ? ");
+        Console.WriteLine("1. view passwords");
+        Console.WriteLine("2. add passwords");
+        Console.WriteLine("delete passwords");
+        Console.WriteLine("4. update password");
+        Console.WriteLine("5. exit the app");
+
+        userChoice = Console.ReadLine();
+
+        //using conditionals to determine the next action
+
+        if (userChoice == "1")
+        {
+            ViewPassword();
+        }
+
+        else if (userChoice == "2")
+        {
+            AddPasswordDetails();
+        }
+
+
+
+
 
     }
 
@@ -48,17 +72,19 @@ public class PasswordManager
             Console.WriteLine("do you still want to store another password  ?  yes/no");
             string loopDeterminant = Console.ReadLine();
 
-            if (loopDeterminant == " no")
+            if (loopDeterminant == "no")
             {
-                isRunning = false;
+                //isRunning = false;
+                Main();
             }
 
             else if (loopDeterminant == "yes")
             {
                 AddPasswordDetails();
             }
-            
-            else{
+
+            else
+            {
                 Console.WriteLine("input a valid option");
             }
         }
