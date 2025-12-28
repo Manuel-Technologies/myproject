@@ -1,3 +1,4 @@
+
 using System;
 using System.Linq;
 
@@ -94,7 +95,7 @@ public static void ViewPassword()
 
     for (int i = 0; i < passwordDetails.Count; i++)
     {
-        Console.WriteLine($"your {i + 1} password is {passwordDetails[i]}");
+        //Console.WriteLine($"your {i + 1} password is {passwordDetails[i]}");
 
     }
     Console.WriteLine("_____________________");
@@ -107,9 +108,14 @@ public static void ViewPassword()
 
 public class PasswordEntry
 {
-    public string accountName { get; set; }
-    public string password { get; set; }
+    public string AccountName { get; set; }
+    public string Password { get; set; }
+
+    PasswordEntry entry = new PasswordEntry();
+    entry.AccountName=accountName;
+    entry.Password=passwordToStore;
+    
+    passwordDetails.Add(entry);
 
 }
-
 
