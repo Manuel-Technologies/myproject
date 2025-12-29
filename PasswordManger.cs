@@ -3,6 +3,7 @@ using System.Linq;
 
 using System.Collections.Generic;
 using sum;
+using System.Data;
 namespace sum;
 
 public class PasswordManager
@@ -13,6 +14,7 @@ public class PasswordManager
     public static void Main()
     {
         string userChoice;
+        bool isRunning = true;
         Console.WriteLine("welcome to your password manager");
         Console.WriteLine();
 
@@ -27,6 +29,7 @@ public class PasswordManager
 
         //using conditionals to determine the next action
 
+
         if (userChoice == "1")
         {
             ViewPassword();
@@ -36,6 +39,23 @@ public class PasswordManager
         {
             AddPasswordDetails();
         }
+        else if (userChoice == "3")
+        {
+            DeletePassword();
+        }
+        else if (userChoice == "4")
+        {
+            UpdatePasswordDetails();
+        }
+        else if (userChoice == "5")
+        {
+            //  break;
+        }
+        else
+        {
+            Console.WriteLine("input  a valid choice");
+        }
+
 
     }
 
@@ -62,7 +82,7 @@ public class PasswordManager
             if (loopDeterminant == "no")
             {
                 //isRunning = false;
-                Main();
+                MenuDisplay();
             }
 
             else if (loopDeterminant == "yes")
@@ -100,11 +120,27 @@ public class PasswordManager
         }
         Console.WriteLine("_____________________");
 
+        Console.WriteLine("");
+        MenuDisplay();
+        
 
+
+    }
+
+    public static void UpdatePasswordDetails()
+    {
+        Console.WriteLine("choose the account ID that you want to change ");
+
+    }
+
+    public static void DeletePassword()
+    {
+
+    }
+
+    public static void MenuDisplay()
+    {
         string userChoice;
-        //  Console.WriteLine("welcome to your password manager");
-        Console.WriteLine();
-
         Console.WriteLine("what do you want to do ? ");
         Console.WriteLine("1. view passwords");
         Console.WriteLine("2. add passwords");
@@ -116,6 +152,7 @@ public class PasswordManager
 
         //using conditionals to determine the next action
 
+
         if (userChoice == "1")
         {
             ViewPassword();
@@ -125,12 +162,22 @@ public class PasswordManager
         {
             AddPasswordDetails();
         }
-    }
-
-    public static void UpdatePasswordDetails()
-    {
-        Console.WriteLine("choose the account ID that you want to change ");
-
+        else if (userChoice == "3")
+        {
+            DeletePassword();
+        }
+        else if (userChoice == "4")
+        {
+            UpdatePasswordDetails();
+        }
+        else if (userChoice == "5")
+        {
+            //  break;
+        }
+        else
+        {
+            Console.WriteLine("input  a valid choice");
+        }
     }
 
 
