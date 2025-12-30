@@ -109,8 +109,6 @@ public class PasswordManager
 
         for (int i = 0; i < passwordDetails.Count; i++)
         {
-            //Console.WriteLine($"your {i + 1} password is {passwordDetails[i]}");
-
             PasswordEntry entry = passwordDetails[i];
 
             Console.WriteLine($"Account : {entry.AccountName}");
@@ -122,7 +120,7 @@ public class PasswordManager
 
         Console.WriteLine("");
         MenuDisplay();
-        
+
 
 
     }
@@ -135,6 +133,25 @@ public class PasswordManager
 
     public static void DeletePassword()
     {
+        PasswordEntry deletePassword = new PasswordEntry();
+
+        Console.WriteLine("which account do you want to delete the password");
+
+        for (int i = 0; i < passwordDetails.Count; i++)
+        {
+            PasswordEntry entry = passwordDetails[i];
+
+            Console.WriteLine($"Account {i + 1}: {entry.AccountName}");
+        }
+        string PasswordToDelete = Console.ReadLine();
+        int.Parse(PasswordToDelete);
+
+        passwordDetails.Remove(PasswordToDelete - 1);
+
+
+
+
+
 
     }
 
