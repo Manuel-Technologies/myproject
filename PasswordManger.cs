@@ -143,10 +143,13 @@ public class PasswordManager
 
             Console.WriteLine($"Account {i + 1}: {entry.AccountName}");
         }
-        string PasswordToDelete = Console.ReadLine();
-        int.Parse(PasswordToDelete);
+        int PasswordToDelete = int.Parse(Console.ReadLine());
 
-        passwordDetails.Remove(PasswordToDelete - 1);
+
+        // passwordDetails.Remove(PasswordToDelete - 1);
+        passwordDetails.RemoveAt(PasswordToDelete - 1);
+        Console.WriteLine("account password deleted successfully");
+
 
 
 
