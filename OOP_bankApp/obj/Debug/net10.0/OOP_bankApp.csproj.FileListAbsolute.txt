@@ -1,0 +1,14 @@
+C:\Users\NWCS\Desktop\OOP_bankApp\bin\Debug\net10.0\OOP_bankApp.exe
+C:\Users\NWCS\Desktop\OOP_bankApp\bin\Debug\net10.0\OOP_bankApp.dll
+C:\Users\NWCS\Desktop\OOP_bankApp\obj\Debug\net10.0\OOP_bankApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NWCS\Desktop\OOP_bankApp\obj\Debug\net10.0\OOP_bankApp.AssemblyInfoInputs.cache
+C:\Users\NWCS\Desktop\OOP_bankApp\obj\Debug\net10.0\OOP_bankApp.AssemblyInfo.cs
+C:\Users\NWCS\Desktop\OOP_bankApp\obj\Debug\net10.0\OOP_bankApp.csproj.CoreCompileInputs.cache
+C:\Users\NWCS\Desktop\OOP_bankApp\obj\Debug\net10.0\OOP_bankApp.dll
+C:\Users\NWCS\Desktop\OOP_bankApp\obj\Debug\net10.0\refint\OOP_bankApp.dll
+C:\Users\NWCS\Desktop\OOP_bankApp\obj\Debug\net10.0\OOP_bankApp.pdb
+C:\Users\NWCS\Desktop\OOP_bankApp\bin\Debug\net10.0\OOP_bankApp.deps.json
+C:\Users\NWCS\Desktop\OOP_bankApp\bin\Debug\net10.0\OOP_bankApp.runtimeconfig.json
+C:\Users\NWCS\Desktop\OOP_bankApp\bin\Debug\net10.0\OOP_bankApp.pdb
+C:\Users\NWCS\Desktop\OOP_bankApp\obj\Debug\net10.0\OOP_bankApp.genruntimeconfig.cache
+C:\Users\NWCS\Desktop\OOP_bankApp\obj\Debug\net10.0\ref\OOP_bankApp.dll
